@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gerador de senha</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <section class="conteudo">
+
+    <!-- Título principal da aplicação -->
+    <div class="conteudo-titulo">
+      <img src="lock.png" width="70" height="70" alt="cadeado fechado" />
+      <h2 class="titulo-principal">Gerador de senhas</h2>
+      <h3 class="titulo-secundario">Gere instantaneamente uma senha aleatória e segura</h3>
+    </div>
+
+    <!-- Área onde a senha será exibida -->
+    <div class="conteudo-senha">
+      <img src="padlock.png" width="30" height="30" alt="cadeado pequeno" />
+      <label for="senha">Senha</label>
+      <input name="senha" type="text" id="campo-senha" readonly />
+    </div>
+
+    <!-- Seção de parâmetros para personalizar a senha -->
+    <div class="parametro">
+      <h3 class="parametro-titulo">Personalize sua senha:</h3>
+      <div class="parametro-coluna__senha">
+
+        <!-- Controle de tamanho da senha -->
+        <div class="parametro-senha">
+          <h4 class="parametro-senha__titulo">Número de caracteres:</h4>
+          <div class="parametro-senha-botoes">
+            <!-- Botão para diminuir o tamanho -->
+            <button class="parametro-senha__botao">-</button>
+            <!-- Valor atual do tamanho -->
+            <p class="parametro-senha__texto">12</p>
+            <!-- Botão para aumentar o tamanho -->
+            <button class="parametro-senha__botao">+</button>
+          </div>
+        </div>
+
+        <!-- Opções de composição da senha -->
+        <div class="parametro-senha">
+          <h4 class="parametro-senha__titulo">Características da senha:</h4>
+
+          <!-- Inclusão de letras maiúsculas -->
+          <div class="parametro-senha-checkbox">
+            <input name="maiusculo" type="checkbox" class="checkbox" checked />
+            <label for="maiusculo">Letras maiúsculas</label>
+          </div>
+
+          <!-- Inclusão de letras minúsculas -->
+          <div class="parametro-senha-checkbox">
+            <input name="minusculo" type="checkbox" class="checkbox" />
+            <label for="minusculo">Letras minúsculas</label>
+          </div>
+
+          <!-- Inclusão de números (sem contar zeros) -->
+          <div class="parametro-senha-checkbox">
+            <input name="numero" type="checkbox" class="checkbox" />
+            <label for="numero">Números</label>
+          </div>
+
+          <!-- Inclusão de símbolos especiais -->
+          <div class="parametro-senha-checkbox">
+            <input name="simbolo" type="checkbox" class="checkbox" />
+            <label for="simbolo">Símbolos</label>
+          </div>
+
+          <!-- Inclusão do caractere zero explicitamente -->
+          <div class="parametro-senha-checkbox">
+            <input name="zero" type="checkbox" class="checkbox" />
+            <label for="zero">Incluir zeros</label>
+          </div>
+        </div>
+
+        <!-- Indicador de força da senha -->
+        <div class="parametro-senha">
+          <h4 class="parametro-senha__titulo">Força da senha</h4>
+
+          <!-- Barra de fundo -->
+          <div class="barra"></div>
+
+          <!-- Camada visual que mostra a força com base em largura e cor -->
+          <div class="forca muito-fraca"></div>
+
+          <!-- Legenda das faixas de força -->
+          <div class="parametro-senha-textos">
+            <p>Muito Fraca</p>
+            <p>Fraca</p>
+            <p>Média</p>
+            <p>Forte</p>
+            <p>Muito Forte</p>
+          </div>
+
+          <!-- Texto explicativo sobre a entropia da senha -->
+          <p class="entropia"></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Script principal que gera e classifica a senha -->
+  <script src="main.js"></script>
+</body>
+</html>
